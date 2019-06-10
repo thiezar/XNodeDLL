@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29001.49
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XNode", "xNode\XNode.csproj", "{2062BDC1-45EF-4BF0-BEA4-9D17E0E73006}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XNodeEditor", "xNodeEditor\XNodeEditor.csproj", "{1510B336-6C64-4A92-AAEB-6519457BA9C5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2062BDC1-45EF-4BF0-BEA4-9D17E0E73006}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2062BDC1-45EF-4BF0-BEA4-9D17E0E73006}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2062BDC1-45EF-4BF0-BEA4-9D17E0E73006}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2062BDC1-45EF-4BF0-BEA4-9D17E0E73006}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1510B336-6C64-4A92-AAEB-6519457BA9C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1510B336-6C64-4A92-AAEB-6519457BA9C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1510B336-6C64-4A92-AAEB-6519457BA9C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1510B336-6C64-4A92-AAEB-6519457BA9C5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {424A879F-A5BA-4CCD-9BC8-570B40A1B312}
+	EndGlobalSection
+EndGlobal

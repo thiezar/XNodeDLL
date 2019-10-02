@@ -56,11 +56,17 @@ namespace XNode {
             } else {
                 // Else, check all relevant DDLs (slower)
                 // ignore all unity related assemblies
+				// never ignore current executing assembly
                 foreach (Assembly assembly in assemblies) {
-                    if (assembly.FullName.StartsWith("Unity")) continue;
-                    // unity created assemblies always have version 0.0.0
-                    if (!assembly.FullName.Contains("Version=0.0.0")) continue;
-                    nodeTypes.AddRange(assembly.GetTypes().Where(t => !t.IsAbstract && baseType.IsAssignableFrom(t)).ToArray());
+
+					if(assembly != Assembly.GetExecutingAssembly())
+					{
+						if (assembly.FullName.StartsWith("Unity")) continue;
+						// unity created assemblies always have version 0.0.0
+						if (!assembly.FullName.Contains("Version=0.0.0") && !assembly.FullName.Contains("")) continue;
+					}
+
+					nodeTypes.AddRange(assembly.GetTypes().Where(t => !t.IsAbstract && baseType.IsAssignableFrom(t)).ToArray());
                 }
             }
             for (int i = 0; i < nodeTypes.Count; i++) {
@@ -82,7 +88,7 @@ namespace XNode {
         private static void CachePorts(System.Type nodeType) {
             List<System.Reflection.FieldInfo> fieldInfo = GetNodeFields(nodeType);
 
-            for (int i = 0; i < fieldInfo.Count; i++) {
+			for (int i = 0; i < fieldInfo.Count; i++) {
 
                 //Get InputAttribute and OutputAttribute
                 object[] attribs = fieldInfo[i].GetCustomAttributes(true);

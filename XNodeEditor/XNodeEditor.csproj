@@ -43,6 +43,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\UnityEditor.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEditor.Graphs">
+      <HintPath>..\UnityEditor.Graphs.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\UnityEngine.dll</HintPath>
@@ -91,4 +94,8 @@
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>copy "$(TargetDir)xNodeEditor.dll" "E:\Projects\Games\Unity projects\xNodeTestDLL\Assets\Plugins\Editor"
+copy "$(TargetDir)xNodeEditor.pdb" "E:\Projects\Games\Unity projects\xNodeTestDLL\Assets\Plugins\Editor"</PostBuildEvent>
+  </PropertyGroup>
 </Project>

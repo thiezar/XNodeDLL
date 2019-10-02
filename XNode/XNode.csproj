@@ -43,6 +43,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\UnityEditor.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEditor.Graphs">
+      <HintPath>..\UnityEditor.Graphs.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\UnityEngine.dll</HintPath>
@@ -50,8 +53,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Attributes\NodeEnum.cs" />
-    <Compile Include="Example\ExampleGraph.cs" />
-    <Compile Include="Example\ExampleNode.cs" />
     <Compile Include="Node.cs" />
     <Compile Include="NodeDataCache.cs" />
     <Compile Include="NodeGraph.cs" />
@@ -59,4 +60,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>copy "$(TargetDir)xNode.dll" "E:\Projects\Games\Unity projects\xNodeTestDLL\Assets\Plugins"
+copy "$(TargetDir)xNode.pdb" "E:\Projects\Games\Unity projects\xNodeTestDLL\Assets\Plugins"</PostBuildEvent>
+  </PropertyGroup>
 </Project>
